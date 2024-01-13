@@ -1,0 +1,24 @@
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: calc(30 * 18px);
+  max-height: calc(30 * 18px);
+  padding: 100px 100px;
+}
+
+.tile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+}
