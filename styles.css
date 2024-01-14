@@ -5,6 +5,7 @@ h1 {
   margin-bottom: 25px;
   font-size: 56px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #343434;
 }
 
 #grid {
@@ -14,7 +15,7 @@ h1 {
   max-height: 650px;
   margin: 50px;
   margin-top: 0px;
-  box-shadow: 5px 5px 10px rgb(191, 191, 191);
+  box-shadow: 0px 5px 10px rgb(191, 191, 191);
 }
 
 .tile {
@@ -31,4 +32,14 @@ h1 {
 .container {
   display: flex;
   justify-content: flex-end;
+}
+
+#colourpicker {
+  display: flex;
+  border: none;
+  height: 100px;
+  width: 100px;
+  padding: 8px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px rgb(191, 191, 191);
 }

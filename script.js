@@ -1,10 +1,14 @@
 /* 
-1. Create grid
-2. Drawing functionality
+1. Create grid X
+2. Drawing functionality X 
 3. Change colour (Colour selection option)
 4. Change grid size
 5. Shading function
 */
+
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
 
 function createGrid() {
   const grid = document.querySelector("#grid");
@@ -17,15 +21,12 @@ function createGrid() {
   }
 }
 
-let mouseDown = false;
-document.body.onmousedown = () => (mouseDown = true);
-document.body.onmouseup = () => (mouseDown = false);
-
 function changeTileColour(event) {
   if (event.type === "mouseover" && !mouseDown) {
     return;
   }
-  event.target.style.backgroundColor = "black";
+  let selectedColour = document.querySelector("#colourpicker").value;
+  event.target.style.backgroundColor = selectedColour;
 }
 
 window.onload = () => {
