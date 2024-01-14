@@ -34,7 +34,7 @@ h1 {
 .settings {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-left: 200px;
 }
@@ -45,6 +45,7 @@ h1 {
   height: 100px;
   width: 100px;
   padding: 8px;
+  margin-bottom: 20px;
   border-radius: 15px;
   box-shadow: 0px 5px 10px rgb(191, 191, 191);
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
@@ -65,7 +66,7 @@ h1 {
   opacity: 0.8;
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
   transition: opacity 0.2s;
-  margin: 20px;
+  margin: 10px;
 }
 
 #gridSizeSlider:hover {
@@ -82,27 +83,32 @@ h1 {
 }
 
 #gridDimensions {
-  margin: 50px;
   margin-bottom: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 18px;
   text-align: center;
 }
 
-#clearButton {
-  padding: 10px 60px 10px 60px;
+button {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   border-width: 1px;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: inherit;
-  margin: 25px;
+  margin: 10px;
   box-shadow: 0px 5px 10px rgb(191, 191, 191);
-  opacity: 0.8;
-  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  opacity: 0.9;
+  -webkit-transition: 0.2s;
   transition: opacity 0.2s;
+  align-self: stretch;
+  padding: 10px;
 }
 
-#clearButton:hover {
+button:hover {
   opacity: 1;
+}
+
+.active {
+  background-color: #343434;
+  color: #fffff0;
 }
