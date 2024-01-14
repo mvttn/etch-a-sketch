@@ -6,3 +6,5 @@ Etch-A-Sketch.
 
 This will allow me to apply my DOM manipulation skills as well
 as my HTML, CSS and JavaScript methods.
+
+[See Live Demo Here](https://mvttn.github.io/pixel-sketch/)
