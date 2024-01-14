@@ -1,14 +1,27 @@
-/* 
-1. Create grid X
-2. Drawing functionality X 
-3. Change colour (Colour selection option)
-4. Change grid size
-5. Shading function
-*/
+const DEFAULT_MODE = "singleColour";
+let currentMode = DEFAULT_MODE;
 
 const grid = document.querySelector("#grid");
 const gridSizeSlider = document.querySelector("#gridSizeSlider");
 gridSizeSlider.onchange = (e) => changeGridSize();
+gridSizeSlider.onmousemove = (e) => getGridSize();
+
+const singleModeBtn = document.querySelector("#singleColour");
+const randomModeBtn = document.querySelector("#randomColour");
+const eraserModeBtn = document.querySelector("#eraser");
+
+singleModeBtn.addEventListener("click", () => {
+  currentMode = "singleColour";
+  activateButton();
+});
+randomModeBtn.addEventListener("click", () => {
+  currentMode = "randomColour";
+  activateButton();
+});
+eraserModeBtn.addEventListener("click", () => {
+  currentMode = "eraser";
+  activateButton();
+});
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -56,8 +69,35 @@ function changeTileColour(event) {
   if (event.type === "mouseover" && !mouseDown) {
     return;
   }
-  let selectedColour = document.querySelector("#colourPicker").value;
-  event.target.style.backgroundColor = selectedColour;
+  // Change tile colour depending on current mode
+  if (currentMode === "randomColour") {
+    const randomR = Math.floor(Math.random() * 256);
+    const randomG = Math.floor(Math.random() * 256);
+    const randomB = Math.floor(Math.random() * 256);
+    event.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+  } else if (currentMode === "singleColour") {
+    let selectedColour = document.querySelector("#colourPicker").value;
+    event.target.style.backgroundColor = selectedColour;
+  } else if (currentMode === "eraser") {
+    event.target.style.backgroundColor = "white";
+  }
+}
+
+function activateButton() {
+  // Change styling of clicked button
+  if (currentMode === "randomColour") {
+    randomModeBtn.classList.add("active");
+    singleModeBtn.classList.remove("active");
+    eraserModeBtn.classList.remove("active");
+  } else if (currentMode === "singleColour") {
+    singleModeBtn.classList.add("active");
+    randomModeBtn.classList.remove("active");
+    eraserModeBtn.classList.remove("active");
+  } else if (currentMode === "eraser") {
+    eraserModeBtn.classList.add("active");
+    randomModeBtn.classList.remove("active");
+    singleModeBtn.classList.remove("active");
+  }
 }
 
 window.onload = () => {
