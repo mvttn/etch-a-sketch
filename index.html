@@ -9,10 +9,12 @@
   </head>
   <body>
     <h1>Pixel Sketch</h1>
-    <div class="settings">
-      <input type="color" id="colourpicker" value="#000000" />
-    </div>
     <div class="container">
+      <div class="settings">
+        <input type="color" id="colourPicker" value="#000000" />
+        <p id="gridDimensions"></p>
+        <input type="range" min="1" max="100" value="50" id="gridSizeSlider" />
+      </div>
       <div id="grid"></div>
     </div>
   </body>
